@@ -1,0 +1,558 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+
+/*home*/
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
+body {
+    background-image: url(/images/background.jpeg);
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+
+p {
+  color: white;
+  text-indent: 1em;
+  margin-bottom: 1em;
+}
+
+
+.p-head {
+  color: white;
+  text-indent: 0em;
+  margin-bottom: 0em;
+}
+
+
+.note {
+    margin-top: 40px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+
+nav {
+  background-color: rgba(128, 128, 128, 0.5);
+  padding: 6px;
+  display: flex;
+  box-shadow: 0 2px 5px rgb(255, 255, 255, 0.5);
+}
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  flex:8;
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  flex:2;
+  justify-content: flex-end;
+}
+
+
+.nav-link {
+  color: #fff;
+  text-decoration: none; /* 去除链接下划线 */
+  margin:0 10px; /*左右边距*/
+  font-size: 18px;
+  font-weight: bold; /* 文字加粗 */
+  transition: color 0.3s ease; /* 颜色过渡效果 */
+}
+
+
+.nav-link:hover {
+  color: #999999; /* 悬停时文字颜色变化 */
+}
+
+
+i.fas {
+  font-size: 14px;
+  margin: 4px;
+}
+
+
+.container {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto 0 auto; /*上右下左边距*/
+  width:100%;
+  height:200px;
+  overflow:hidden;
+}
+
+
+.logo-animation {
+  position:absolute;
+  width: 100px;
+  height:100px;
+  border-radius: 50%;
+  transition:transform 0.5s ease;
+}
+
+
+.text {
+  position: absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+  color:white;
+  font-size: 18px;
+}
+
+
+.text-animation {
+  position: absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+  left: 20%;
+  color:white;
+  font-size: 24px;
+  opacity: 0;
+  transition: transform 0.5s ease,opacity 0.5s ease;
+  transform: translateX(-10px); /* 初始位置在视图左侧外 */
+}
+
+
+.container:hover .logo-animation,
+.container.animate .logo-animation { 
+transform:translateX(-65px);
+}
+
+
+.container:hover .text-animation,
+.container.animate .text-animation {
+transform:translateX(15px);
+  opacity:1;
+}
+
+
+.mine {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.mine a {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mine i {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+
+
+/*updates*/
+
+
+
+.updates-container {
+  width: 90%;
+  margin: 30px auto;
+  padding: 15px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(255, 255, 255, 0.5);
+}
+
+
+.updates-header {
+  display: flex;
+  align-items: center;
+}
+
+
+/* 头像样式 */
+.updates-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* 圆形头像 */
+  margin-right: 10px;
+}
+
+
+/* 名字和发布时间的容器 */
+.updates-info {
+  display: flex;
+  flex-direction: column ;
+}
+
+
+/* 名字样式 */
+.updates-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+.updates-time {
+  font-size: 14px;
+  color: white;
+  margin: 2px 0 0 0;
+}
+
+
+.updates-content {
+  margin-top: 15px;
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+}
+
+
+.updates-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+
+/* 隐藏图片并设置过渡效果 */
+.toggle-image {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+
+/* 当添加 .show 类时，图片显示 */
+.toggle-image.show {
+  max-height: 1000px; /* 根据图片高度调整 */
+  opacity: 1;
+}
+
+
+/* 按钮样式 */
+.toggle-image-button {
+  background-color: #5c605d;
+  border: none;
+  color: white; /* 白色文字 */
+  padding: 10px 20px; /* 内边距 */
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+/* 按钮悬停效果 */
+.toggle-image-button:hover {
+  background-color: #8d968d;
+}
+
+
+
+/*blogs*/
+
+
+
+/* 博客文章整体样式 */
+.blog-post {
+  margin: 20px auto;
+  padding: 15px;
+  width: 90%;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.blog-post:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+
+.blog-title {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+
+.blog-date {
+  font-size: 14px;
+  color: #dddddd;
+  margin-bottom: 15px;
+}
+
+
+.blog-preview {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+
+/* 完整内容，初始状态为收起 */
+.blog-content {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.5;
+  transition: max-height 0.5s ease;
+}
+
+
+/* 当.blog-post有.expanded类时，展开完整内容 */
+.blog-post.expanded .blog-content {
+  max-height: 10000px; /* 可以根据内容长度调整 */
+}
+
+
+
+/*mcserver*/
+
+
+
+.album {
+  box-shadow: 0 2px 5px rgb(255, 255, 255, 0.5);
+  position: relative;
+  width: 100%;
+  margin: 10px auto;
+}
+
+
+/* 主图片样式 */
+.mcserver-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+/* 隐藏图片容器初始状态 */
+.hidden-images {
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none; /* 禁用鼠标事件 */
+  transition: opacity 0.5s ease;
+}
+
+
+/* 隐藏图片初始样式 */
+.album-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+/* 当添加 .show 类时的样式 */
+.album-image.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* mcserver页面 - 点击提示部分 */
+
+
+.click-here-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.click-here-text {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.click-here-arrow {
+  font-size: 36px;
+  color: white;
+  animation: bounce 2s infinite;
+  user-select: none;
+}
+
+/* 添加一个简单的弹跳动画 */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+
+/*links*/
+
+
+
+.links-title {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0 20px 0;
+    color: #fed7d7;
+}
+
+
+.links-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.link-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.3);
+  box-shadow: 0 2px 5px rgb(255, 255, 255, 0.5);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+.link-item:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+
+.link-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+
+.link-content {
+    flex: 1;
+}
+
+
+.link-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fed7d7;
+    text-decoration: none;
+}
+
+
+.link-name:hover {
+    text-decoration: underline;
+}
+
+
+.link-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+
+
+/*donate*/
+
+
+
+/* 打赏页面样式 */
+.donate-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+}
+
+
+.donate-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fed7d7;
+}
+
+
+.donate-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+
+.donate-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.donate-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .donate-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+.donate-method:hover .donate-image {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
