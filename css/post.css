@@ -13,7 +13,7 @@ body {
 }
 
 .meta .categories a {
-  font-size: 13px;
+  font-size: 16px;
   margin-right: 6px;
   text-decoration: none;
 }
@@ -44,6 +44,7 @@ body {
 .content h6,
 .meta .categories,
 .meta .date,
+.meta .tags,
 .content figure,
 /* only `.content>pre`, do not include <pre /> in <figure /> */
 .content>pre,
@@ -65,6 +66,7 @@ hr,
   margin-right: auto;
   padding: 0 16px;
 }
+
 
 .content p img,
 .content .block-large img {
@@ -201,6 +203,7 @@ hr,
   width: var(--size);
   height: var(--size);
   margin-right: 6px;
+  vertical-align: middle;
 }
 
 body[data-color-scheme="auto"] .tags .icon {
@@ -218,10 +221,12 @@ body[data-color-scheme="dark"] .tags .icon {
 }
 
 .tags .tag {
-  font-size: 14px;
+  font-size: 16px;
   display: block;
   height: 14px;
-  margin-right: 4px;
+  margin-right: 10px;
+  line-height: 0.8;
+  vertical-align: middle;
 }
 
 .about {
